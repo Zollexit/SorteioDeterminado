@@ -1,0 +1,30 @@
+import java.util.Scanner;
+import java.util.Random;
+public class SorteioDeterminado
+{
+    public static void main(String Args[])
+    {
+        int x,y,z,aux;
+        System.out.println("Digite a quantidade de números sorteados: ");
+        Scanner quant = new Scanner(System.in);
+        x = quant.nextInt();
+        System.out.println("Digite a faixa do sorteio: ");
+        System.out.println("De: ");
+        Scanner faixa1 = new Scanner(System.in);
+        y = faixa1.nextInt();
+        System.out.println("A: ");
+        Scanner faixa2 = new Scanner(System.in);
+        z = faixa2.nextInt();
+        System.out.println("Seu sorteio: ");
+        for(int c=0; c<x; c++)
+        {
+        Random random = new Random();        
+        aux = random.nextInt(z+1);
+        while(aux < y)
+            {    
+                aux = random.nextInt(z+1);
+            }
+            System.out.println(aux);
+        }
+    }
+}
